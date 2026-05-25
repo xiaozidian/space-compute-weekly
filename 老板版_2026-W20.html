@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>老板版｜中美太空算力周报 2026-W20</title>
+  <!-- Design direction: refined industrial intelligence dossier -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ivory: #faf9f5;
+      --ivory-warm: #f0eee6;
+      --ivory-deep: #e3dacc;
+      --ink: #141413;
+      --ink-soft: #3d3d3a;
+      --mid-gray: #b0aea5;
+      --light-gray: #e8e6dc;
+      --terracotta: #d97757;
+      --slate-blue: #6a9bcc;
+      --olive: #788c5d;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 17px;
+      line-height: 1.55;
+    }
+    .page {
+      width: min(1040px, calc(100% - 64px));
+      margin: 0 auto;
+      padding: 64px 0;
+    }
+    .mono, .masthead, .metric-label, .metric-note, .event-meta, .source-link, .anchor, .colophon {
+      font-family: "JetBrains Mono", monospace;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .masthead {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      border-bottom: 1px solid var(--light-gray);
+      padding-bottom: 24px;
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
+    .masthead strong { color: var(--ink); font-weight: 400; }
+    .scan-line {
+      grid-column: 1 / -1;
+      border-top: 1px solid var(--light-gray);
+      padding-top: 14px;
+      color: var(--ink-soft);
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) 300px;
+      gap: 36px;
+      align-items: stretch;
+      margin-top: 48px;
+    }
+    .cover {
+      background: var(--ink);
+      color: var(--ivory);
+      padding: 42px;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .cover h1 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 82px;
+      line-height: 0.96;
+      font-weight: 400;
+      margin: 0;
+      letter-spacing: 0;
+      max-width: 690px;
+    }
+    .underline {
+      text-decoration-line: underline;
+      text-decoration-thickness: 4px;
+      text-underline-offset: 8px;
+      text-decoration-color: var(--terracotta);
+    }
+    .cover p {
+      max-width: 700px;
+      margin: 36px 0 0;
+      color: var(--ivory-warm);
+      font-size: 20px;
+    }
+    .proof {
+      margin-top: 36px;
+      border-top: 1px solid var(--ink-soft);
+      padding-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .proof-item span {
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+    }
+    .proof-item strong {
+      display: block;
+      margin-top: 6px;
+      font-weight: 500;
+      color: var(--ivory);
+    }
+    .metric-rail {
+      display: grid;
+      gap: 1px;
+      background: var(--light-gray);
+    }
+    .metric {
+      background: var(--ivory-warm);
+      padding: 24px;
+      min-height: 92px;
+    }
+    .metric-label, .metric-note {
+      display: block;
+      font-size: 12px;
+      color: var(--ink-soft);
+    }
+    .metric strong {
+      display: block;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 44px;
+      line-height: 1;
+      font-weight: 400;
+      margin: 8px 0 6px;
+    }
+    section { margin-top: 96px; }
+    h2 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 44px;
+      line-height: 1.1;
+      font-weight: 400;
+      margin: 0 0 28px;
+      letter-spacing: 0;
+    }
+    h3 {
+      font-size: 22px;
+      line-height: 1.2;
+      margin: 12px 0 18px;
+      font-weight: 600;
+    }
+    p { margin: 0 0 14px; color: var(--ink-soft); }
+    p strong {
+      color: var(--ink);
+      font-weight: 600;
+      margin-right: 0.6em;
+    }
+    .threads {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    .thread {
+      background: var(--ivory-warm);
+      padding: 26px;
+      min-height: 310px;
+    }
+    .thread-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .ledger-row, .milestone, .capital-row {
+      border-top: 1px solid var(--light-gray);
+      padding: 14px 0;
+    }
+    .ledger-row:first-of-type, .milestone:first-of-type, .capital-row:first-of-type { border-top: 0; }
+    .ledger-row {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 14px;
+    }
+    .date-key {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+      color: var(--ink);
+    }
+    .milestone strong, .capital-row strong { display: block; font-weight: 600; }
+    .capital-row {
+      display: grid;
+      grid-template-columns: 86px 1fr;
+      gap: 14px;
+    }
+    .amount {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 30px;
+      line-height: 1;
+      color: var(--ink);
+    }
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .event-card {
+      background: var(--ivory-warm);
+      padding: 28px;
+      border: 1px solid var(--light-gray);
+      border-radius: 8px;
+    }
+    .event-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--ink-soft);
+      font-size: 12px;
+    }
+    .anchor {
+      margin-top: 18px;
+      color: var(--ink);
+      font-size: 13px;
+    }
+    .lead-signal {
+      grid-column: 1 / -1;
+      background: var(--ivory-deep);
+    }
+    .lead-body {
+      display: grid;
+      grid-template-columns: 1.3fr 0.85fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .why-next {
+      border-left: 1px solid var(--mid-gray);
+      padding-left: 22px;
+    }
+    .why-next span, .memo-grid span {
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .memo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      border-top: 1px solid var(--light-gray);
+      border-bottom: 1px solid var(--light-gray);
+      padding: 18px 0;
+      margin-bottom: 16px;
+    }
+    .capital-figure {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 58px;
+      line-height: 1;
+      margin: 20px 0;
+      color: var(--ink);
+    }
+    .source-link {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--ink-soft);
+      text-decoration: underline;
+      text-decoration-color: currentColor;
+      transition: color 0.15s ease;
+    }
+    .source-link:visited { color: var(--ink-soft); }
+    .source-link:hover { color: var(--terracotta); }
+    .source-link:focus-visible {
+      outline: 2px solid var(--terracotta);
+      outline-offset: 2px;
+    }
+    .finance-note {
+      max-width: 720px;
+      font-size: 20px;
+      color: var(--ink-soft);
+    }
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--light-gray);
+    }
+    .action-col {
+      background: var(--ivory-warm);
+      padding: 26px;
+    }
+    .action-col h3 { margin-top: 0; }
+    .action-col p {
+      border-top: 1px solid var(--light-gray);
+      padding-top: 14px;
+    }
+    .action-col p:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+    .colophon {
+      margin-top: 96px;
+      padding-top: 24px;
+      border-top: 1px solid var(--light-gray);
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
+    @media (max-width: 860px) {
+      .page { width: min(100% - 40px, 1040px); padding: 48px 0; }
+      .masthead, .hero, .threads, .event-grid, .lead-body, .action-grid { grid-template-columns: 1fr; }
+      .cover h1 { font-size: 54px; }
+      .proof { grid-template-columns: 1fr 1fr; }
+      .lead-signal { grid-column: auto; }
+    }
+    @media print {
+      @page { size: A4; margin: 14mm; }
+      .page { width: auto; padding: 0; }
+      .masthead { font-size: 11px; }
+      .hero { grid-template-columns: 1fr; gap: 18px; page-break-after: always; }
+      .cover { min-height: auto; padding: 34px; }
+      .cover h1 { font-size: 52px; max-width: 100%; }
+      .cover p { font-size: 18px; margin-top: 24px; }
+      .proof { margin-top: 26px; grid-template-columns: repeat(4, 1fr); }
+      .metric-rail { grid-template-columns: repeat(5, 1fr); }
+      .metric { min-height: 72px; padding: 14px; }
+      .metric strong { font-size: 30px; }
+      section { margin-top: 56px; }
+      h2 { font-size: 36px; }
+      .thread, .event-card, .action-col { break-inside: avoid; page-break-inside: avoid; }
+      .event-grid { gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="masthead">
+      <strong>中美太空算力周报</strong>
+      <span>2026-W20 · 2026.05.11–2026.05.17 · Compiled 2026.05.18</span>
+      <div class="scan-line">Pass A/B/C completed · S/A review passed · Financing ratio controlled below 30%</div>
+    </header>
+
+    <section class="hero" aria-label="Executive hero">
+      <div class="cover">
+        <div>
+          <h1>太空算力：<span class="underline">采购与验证</span>周</h1>
+          <p>本周最重要的变化不是单一发射，而是政府采购、星载处理器、天基光计算载荷与轨道 AI 数据中心融资同步出现。</p>
+        </div>
+        <div class="proof" aria-label="Mission log proof object">
+          <div class="proof-item"><span>Policy</span><strong>FCC / SSC / NASA</strong></div>
+          <div class="proof-item"><span>Processor</span><strong>HPSC testing</strong></div>
+          <div class="proof-item"><span>China core</span><strong>天基光计算</strong></div>
+          <div class="proof-item"><span>Capital</span><strong>$340M orbital infra</strong></div>
+        </div>
+      </div>
+      <aside class="metric-rail" aria-label="Key metrics">
+        
+      <div class="metric">
+        <span class="metric-label">事件表</span>
+        <strong>105</strong>
+        <span class="metric-note">全量入库</span>
+      </div>
+        
+      <div class="metric">
+        <span class="metric-label">正文</span>
+        <strong>71</strong>
+        <span class="metric-note">融资21条</span>
+      </div>
+        
+      <div class="metric">
+        <span class="metric-label">融资占比</span>
+        <strong>29.6%</strong>
+        <span class="metric-note">≤30% gate</span>
+      </div>
+        
+      <div class="metric">
+        <span class="metric-label">S/A</span>
+        <strong>33</strong>
+        <span class="metric-note">6 S · 27 A</span>
+      </div>
+        
+      <div class="metric">
+        <span class="metric-label">政策/科技/融资</span>
+        <strong>14/36/55</strong>
+        <span class="metric-note">全量 split</span>
+      </div>
+      </aside>
+    </section>
+
+    <section>
+      <h2>三条<span class="underline">主线</span></h2>
+      <div class="threads">
+        <article class="thread">
+          <div class="thread-label">Policy ledger</div>
+          <p>美国侧以频谱、NRO、NASA、SSC 采购拉动空间通信和遥感数据链路；中国侧以算力券、智能算力统计和算电协同稳定地面算力底座。</p>
+          <div class="ledger-row"><span class="date-key">5/12</span><span>FCC 批准 EchoStar 向 SpaceX 转让 65 MHz 频谱。</span></div>
+          <div class="ledger-row"><span class="date-key">5/14</span><span>NASA 发布火星通信网络 RFP，NRO 合同继续采购商业遥感增强能力。</span></div>
+          <div class="ledger-row"><span class="date-key">5/15</span><span>SSC 授予 3.98 亿美元受保护战术卫星通信原型合同。</span></div>
+        </article>
+        <article class="thread">
+          <div class="thread-label">Technology evidence stack</div>
+          <p>技术侧从“发射承载能力”推进到“星载处理器、新型计算架构、星地链路调度”的工程化证据。</p>
+          <div class="milestone"><strong>HPSC</strong><span>NASA 下一代星载处理器进入辐射、热、冲击和功能测试。</span></div>
+          <div class="milestone"><strong>天基光计算</strong><span>东方天算/光本位启动天基光计算载荷联合研制。</span></div>
+          <div class="milestone"><strong>JAM</strong><span>SSC 披露商业/政府天线动态调度市场进展。</span></div>
+        </article>
+        <article class="thread">
+          <div class="thread-label">Capital strip</div>
+          <p>融资侧把空间能源、轨道 AI 数据中心和商业航天供应链推向资本定价，但 HTML 仅保留 2 张融资卡，其余指向数据库版。</p>
+          <div class="capital-row"><span class="amount">$275M</span><span><strong>Cowboy Space</strong>轨道 AI 数据中心融资。</span></div>
+          <div class="capital-row"><span class="amount">$65M</span><span><strong>Star Catcher</strong>在轨能量传输网络 A 轮。</span></div>
+          <div class="capital-row"><span class="amount">21条</span><span><strong>正文融资</strong>占比 29.6%，未突破硬约束。</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Core event dossier</h2>
+      <div class="event-grid">
+        
+    <article class="event-card lead-signal">
+      
+      <div class="event-meta">
+        <span>S · 政策 · 美国</span>
+        <span>5/12</span>
+      </div>
+      <div class="anchor">FCC / 65 MHz</div>
+      <div class="lead-body">
+        <div>
+      <h3>FCC 批准 EchoStar 向 SpaceX 转让 65 MHz 频谱</h3>
+      <p><strong>判断</strong>这不是普通频谱交易，而是美国 D2D / 卫星直连终端生态的一次监管放行。</p>
+      <p><strong>影响</strong>SpaceX 获得更清晰的移动卫星服务频谱基础后，下一步可把 Starlink 从宽带连接扩展到终端直连和数据入口。</p>
+      <p><strong>意义</strong>频谱是星地数据链路的稀缺入口，后续国内外卫星互联网公司都要把频谱、终端、星座和数据服务作为一体化能力看。</p>
+      <p><strong>跟踪</strong>看 FCC 是否附加竞争条件、SpaceX D2D 商用节奏，以及小型运营商反对意见是否引发二次监管讨论。</p>
+      <a class="source-link" href="https://docs.fcc.gov/public/attachments/DA-26-471A1.pdf" target="_blank" rel="noopener noreferrer">Source: FCC ↗</a></div>
+        <div class="why-next">
+          <span>Why it matters</span>
+          <p>SpaceX 获得更清晰的移动卫星服务频谱基础后，下一步可把 Starlink 从宽带连接扩展到终端直连和数据入口。</p>
+          <span>Next trigger</span>
+          <p>看 FCC 是否附加竞争条件、SpaceX D2D 商用节奏，以及小型运营商反对意见是否引发二次监管讨论。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="event-card timeline-card">
+      
+      <div class="event-meta">
+        <span>S · 科技 · 美国</span>
+        <span>5/12</span>
+      </div>
+      <div class="anchor">HPSC</div>
+      <h3>NASA 下一代高性能星载处理器进入测试</h3>
+      <p><strong>判断</strong>HPSC 进入测试，说明美国下一代星载通用处理器从研制转向工程认证。</p>
+      <p><strong>影响</strong>它会直接提升深空任务、地球观测、载人栖居和自主航天器的在轨计算上限，是星上 AI 的硬件底座。</p>
+      <p><strong>意义</strong>这是判断星载处理器路线、抗辐照 SoC 生态和潜在国产替代窗口的核心参照。</p>
+      <p><strong>跟踪</strong>看 Microchip 后续供货节奏、早期接入伙伴、辐射测试结果和首个搭载任务。</p>
+      <a class="source-link" href="https://www.nasa.gov/technology/hello-universe-nasas-next-gen-space-processor-undergoes-testing/" target="_blank" rel="noopener noreferrer">Source: NASA ↗</a>
+    </article>
+
+    <article class="event-card risk-memo">
+      
+      <div class="event-meta">
+        <span>S · 科技 · 中国</span>
+        <span>5/15</span>
+      </div>
+      <div class="anchor">天基光计算</div>
+      <h3>东方天算与光本位启动全球首个天基光计算载荷研制</h3>
+      <div class="memo-grid">
+        <div><span>机会</span><p>这条线值得优先建立竞品档案，尤其是载荷指标、星间激光协同、能源和热控设计。</p></div>
+        <div><span>风险</span><p>看工程样机、卫星平台、首飞窗口、长三角联合体分工和是否出现政府/大客户场景。</p></div>
+      </div>
+      <p><strong>判断</strong>东方天算/光本位选择光计算路线，试图绕开传统电子芯片在功耗、散热和抗辐照上的瓶颈。</p>
+      <p><strong>影响</strong>如果载荷能完成在轨验证，中国太空算力叙事会从“发射计算星座”推进到“新型计算架构上星”。</p>
+      <a class="source-link" href="https://www.semi.org.cn/site/semi/article/baecf6b94488406bb119f6553ac7c881.html" target="_blank" rel="noopener noreferrer">Source: 东方天算 / SEMI转载 ↗</a>
+    </article>
+
+    <article class="event-card capital-card">
+      
+      <div class="event-meta">
+        <span>A · 融资 · 美国</span>
+        <span>5/11</span>
+      </div>
+      <div class="anchor">$275M</div>
+      <h3>Cowboy Space 完成 2.75 亿美元融资用于轨道 AI 数据中心</h3>
+      <div class="capital-figure">$275M</div>
+      <p><strong>判断</strong>Cowboy Space 的大额融资说明轨道 AI 数据中心正在被资本当成基础设施赛道定价。</p>
+      <p><strong>影响</strong>金额足够大，但当前来源仍偏媒体线索，技术、客户和首飞验证还没有完全闭环。</p>
+      <p><strong>意义</strong>可以作为高优先级观察对象，但不宜直接等同于商业模式已经成立。</p>
+      <p><strong>跟踪</strong>看真实投资方、轨道平台、GPU/散热/电力架构、发射伙伴和首批客户。</p>
+      <a class="source-link" href="https://www.space.com/technology/cowboy-space-raises-usd275-million-to-launch-ai-data-centers-on-brand-new-rocket" target="_blank" rel="noopener noreferrer">Source: Space.com ↗</a>
+    </article>
+
+    <article class="event-card capital-card">
+      
+      <div class="event-meta">
+        <span>S · 融资 · 美国</span>
+        <span>5/12</span>
+      </div>
+      <div class="anchor">$65M</div>
+      <h3>Star Catcher 完成 6500 万美元 A 轮融资</h3>
+      <div class="capital-figure">$65M</div>
+      <p><strong>判断</strong>Star Catcher 做的是空间能源网络，和轨道算力天然相邻。</p>
+      <p><strong>影响</strong>如果在轨光学能量传输可行，它可能缓解卫星算力受电力约束的问题，为高功耗载荷打开空间。</p>
+      <p><strong>意义</strong>这是太空算力上游基础设施，不是单纯能源公司，值得持续跟踪技术验证和客户绑定。</p>
+      <p><strong>跟踪</strong>看首次在轨测试、功率传输效率、客户名单和是否进入政府任务链。</p>
+      <a class="source-link" href="https://www.prnewswire.com/news-releases/star-catcher-raises-65-million-to-build-the-first-power-grid-in-space-302769128.html" target="_blank" rel="noopener noreferrer">Source: PR Newswire ↗</a>
+    </article>
+
+    <article class="event-card timeline-card">
+      
+      <div class="event-meta">
+        <span>A · 政策 · 美国</span>
+        <span>5/15</span>
+      </div>
+      <div class="anchor">$398M / SSC</div>
+      <h3>美国太空军授予3.98亿美元增强型保护战术卫星通信原型合同</h3>
+      <p><strong>判断</strong>SSC 的 PTS-P 合同把受保护卫星通信、抗干扰和星上处理打包成明确采购。</p>
+      <p><strong>影响</strong>3.98 亿美元合同说明美国军方仍在加码韧性 SATCOM，且开始用更快的原型采办路径推进。</p>
+      <p><strong>意义</strong>这会牵引抗辐照计算、先进天线、波形处理和军用卫星通信供应链。</p>
+      <p><strong>跟踪</strong>看 Northrop 分包、关键设计审查、PTW 空间处理指标和后续 PTS-P/R 采购。</p>
+      <a class="source-link" href="https://www.ssc.spaceforce.mil/Newsroom/Article/4493753/space-force-expands-protected-tactical-satellite-communications-through-new-pro" target="_blank" rel="noopener noreferrer">Source: Space Systems Command ↗</a>
+    </article>
+
+    <article class="event-card timeline-card">
+      
+      <div class="event-meta">
+        <span>S · 科技 · 美国</span>
+        <span>5/11</span>
+      </div>
+      <div class="anchor">NROL-172</div>
+      <h3>SpaceX 发射 NROL-172，继续建设 NRO proliferated architecture</h3>
+      <p><strong>判断</strong>NROL-172 是 NRO 增殖式架构持续扩容的一次节点。</p>
+      <p><strong>影响</strong>它强化的是多星、多轨道、弹性侦察和空间数据网络，而不只是一次常规发射。</p>
+      <p><strong>意义</strong>这类架构会提高星上预处理、星间链路和快速下行的需求，是太空算力最稳定的政府需求侧。</p>
+      <p><strong>跟踪</strong>看后续 NRO 发射批次、星间光通信披露、商业供应商结构和数据处理能力升级。</p>
+      <a class="source-link" href="https://spaceflightnow.com/2026/05/11/live-coverage-spacex-to-launch-intelligence-gathering-satellites-for-the-national-reconnaissance-office/" target="_blank" rel="noopener noreferrer">Source: Spaceflight Now ↗</a>
+    </article>
+
+    <article class="event-card risk-memo">
+      
+      <div class="event-meta">
+        <span>S · 科技 · 美国</span>
+        <span>5/14</span>
+      </div>
+      <div class="anchor">Andromeda</div>
+      <h3>Intuitive Machines 披露入选 Space Force Andromeda IDIQ</h3>
+      <div class="memo-grid">
+        <div><span>机会</span><p>这类公司可能从单一任务承包商变成空间基础设施平台型供应商，需要持续跟踪订单转化。</p></div>
+        <div><span>风险</span><p>看 Andromeda 具体 task order、Lanteris 并购整合和 backlog 兑现。</p></div>
+      </div>
+      <p><strong>判断</strong>Intuitive Machines 进入 Andromeda IDIQ，说明商业月球/空间基础设施公司正在进入国家安全空间任务。</p>
+      <p><strong>影响</strong>GEO 机动卫星和空间态势感知任务会推高自主导航、在轨感知和边缘处理需求。</p>
+      <a class="source-link" href="https://www.globenewswire.com/news-release/2026/05/14/3294812/0/en/intuitive-machines-reports-first-quarter-2026-financial-results-posts-record-quarterly-revenue-gross-margin-and-positive-adjusted-ebitda-along-with-record-quarter-end-backlog-of-1-.html" target="_blank" rel="noopener noreferrer">Source: GlobeNewswire / Intuitive Machines ↗</a>
+    </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>融资其余条目</h2>
+      <p class="finance-note">本周境内/境外融资清单另含芯片/半导体 11 条、商业航天/卫星通信/导航 6 条、相关 AI 算力 4 条进入正文；其余 34 条融资保留在数据库版，覆盖光模块、量子/光子芯片、机器人、AI 基础设施和商业航天早期项目。HTML 版不展开公司清单，避免融资条目压过政策与技术主线。</p>
+    </section>
+
+    <section>
+      <h2>Action memo</h2>
+      <div class="action-grid">
+        <article class="action-col">
+          <h3>机会</h3>
+          <p>把东方天算/光本位、NASA HPSC、Star Catcher、Cowboy Space 列为太空算力竞品和生态重点跟踪对象。</p>
+          <p>对美国频谱、NRO、NASA SCaN、SSC SATCOM 合同建立采购线索表，优先看商业公司如何进入政府任务链。</p>
+          <p>将天线调度、星间光通信、星载处理器、轨道能源四类能力合并看作空间数据基础设施栈。</p>
+        </article>
+        <article class="action-col">
+          <h3>风险</h3>
+          <p>Cowboy Space 来源仍偏媒体线索，技术架构、首飞验证和真实客户尚未完全闭环，不能直接等同商业模式成立。</p>
+          <p>部分企查查融资条目缺少公开公告，只能作为资本流向底库，不能作为老板版核心事件卡。</p>
+          <p>频谱交易仍有竞争担忧，D2D 商用节奏可能受监管条件、终端生态和运营商关系影响。</p>
+        </article>
+        <article class="action-col">
+          <h3>下周必须看</h3>
+          <p>SpaceX Starship V3 首飞、Starlink D2D 频谱后续条件，以及 FCC 是否出现新的反对或附加约束。</p>
+          <p>NASA 火星通信网络 RFP 的产业响应、SSC PTS-P 分包路径、JAM 商业天线伙伴披露。</p>
+          <p>东方天算/光本位是否公布工程样机、卫星平台、首飞窗口和天基光计算载荷指标。</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="colophon">中美太空算力周报 · 2026-W20 · Compiled 2026.05.18 · Internal use</footer>
+  </main>
+</body>
+</html>
