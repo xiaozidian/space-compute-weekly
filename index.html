@@ -1,112 +1,275 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>速览版_2026-W21</title>
-  <!-- Design direction: refined industrial intelligence dossier -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-  <style>
-    :root{--ivory:#faf9f5;--ivory-warm:#f0eee6;--ivory-deep:#e3dacc;--ink:#141413;--ink-soft:#3d3d3a;--mid-gray:#b0aea5;--light-gray:#e8e6dc;--terracotta:#d97757;}
-    *{box-sizing:border-box} body{margin:0;background:var(--ivory);color:var(--ink);font-family:"Inter Tight",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55} .shell{max-width:1040px;margin:0 auto;padding:64px 32px}
-    .mast{display:flex;justify-content:space-between;gap:24px;border-bottom:1px solid var(--light-gray);padding-bottom:22px;font-family:"JetBrains Mono",monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
-    .hero{display:grid;grid-template-columns:1.3fr .7fr;gap:38px;margin:52px 0 76px} h1{font-family:Fraunces,Georgia,serif;font-size:72px;line-height:.98;font-weight:400;margin:0 0 24px} .u{text-decoration:underline;text-decoration-color:var(--terracotta);text-decoration-thickness:7px;text-underline-offset:7px}
-    .lede{font-family:Fraunces,Georgia,serif;font-size:24px;max-width:720px} .metrics{border-left:1px solid var(--ink);padding-left:22px;display:grid;gap:16px} .metric b{display:block;font-family:Fraunces,Georgia,serif;font-size:38px;font-weight:400} .metric span{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--ink-soft)}
-    .proof{background:var(--ink);color:var(--ivory);padding:28px;margin-top:28px} .proof h2{font-size:22px;margin:0 0 10px;font-family:"Inter Tight";font-weight:600} .proof p{margin:0;color:var(--ivory)}
-    section{margin:96px 0} h2{font-family:Fraunces,Georgia,serif;font-size:44px;font-weight:400;margin:0 0 28px} .threads{display:grid;grid-template-columns:repeat(3,1fr);gap:18px} .thread{border-top:1px solid var(--ink);padding-top:16px} .thread .label,.event-meta,.anchor{font-family:"JetBrains Mono",monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
-    .cards{display:grid;gap:28px} .event-card{background:var(--ivory-warm);border:1px solid var(--light-gray);border-radius:8px;padding:24px;display:grid;gap:12px} .event-card.lead{grid-template-columns:.24fr 1fr} .event-card.lead h3,.event-card.lead p,.event-card.lead a{grid-column:2} .anchor{color:var(--terracotta)} h3{font-size:22px;margin:0} p{margin:0;font-size:17px} a{font-family:"JetBrains Mono",monospace;font-size:14px;color:var(--ink-soft);text-decoration:underline;text-decoration-color:currentColor} a:hover{color:var(--terracotta)} a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px}
-    .supplement{max-width:720px;border-top:1px solid var(--light-gray);padding-top:20px} .memo{display:grid;grid-template-columns:repeat(3,1fr);gap:20px} .memo-col{border-top:1px solid var(--ink);padding-top:14px} .memo-col div{padding:13px 0;border-bottom:1px solid var(--light-gray)} footer{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--ink-soft);border-top:1px solid var(--light-gray);padding-top:24px}
-    @media(max-width:760px){.shell{padding:48px 20px}.hero,.threads,.memo{grid-template-columns:1fr}h1{font-size:48px}.event-card.lead{grid-template-columns:1fr}.event-card.lead h3,.event-card.lead p,.event-card.lead a{grid-column:auto}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中美太空算力周报 · 速览版 · 2026-W22</title>
+<!-- Design direction: orbital command brief — mission-control discipline, strong time markers, compact signal panels -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#faf9f5; --ivory-warm:#f0eee6; --ivory-deep:#e3dacc;
+  --ink:#141413; --ink-soft:#3d3d3a; --mid-gray:#b0aea5; --light-gray:#e8e6dc;
+  --terracotta:#d97757;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--ivory);color:var(--ink);
+  font-family:"Inter Tight",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+.shell{max-width:1040px;margin:0 auto;padding:64px 32px;}
+.serif{font-family:"Fraunces",Georgia,serif;font-weight:400;}
+.mono{font-family:"JetBrains Mono",monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);}
+.cat{font-family:"Inter Tight",sans-serif;font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);}
+.u-terra{text-decoration:underline;text-decoration-color:var(--terracotta);text-decoration-thickness:3px;text-underline-offset:4px;}
+a{color:var(--ink-soft);text-decoration:underline;text-decoration-color:currentColor;transition:color .15s ease;}
+a:hover{color:var(--terracotta);}
+a:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;}
+
+/* Masthead */
+.masthead{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid var(--ink);padding-bottom:18px;flex-wrap:wrap;gap:12px;}
+.masthead h1{font-family:"Fraunces",Georgia,serif;font-size:30px;font-weight:600;}
+.masthead .meta{text-align:right;}
+.scanline{margin-top:10px;}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.55fr 1fr;gap:40px;margin-top:48px;align-items:start;}
+.hero-claim{font-family:"Fraunces",Georgia,serif;font-size:33px;line-height:1.28;font-weight:400;}
+.hero-sub{margin-top:18px;color:var(--ink-soft);font-size:16px;max-width:560px;}
+.rail{border-left:1px solid var(--light-gray);padding-left:22px;}
+.rail .m{padding:11px 0;border-bottom:1px solid var(--light-gray);}
+.rail .m:last-child{border-bottom:0;}
+.rail .mnum{font-family:"Fraunces",Georgia,serif;font-size:27px;line-height:1;}
+.rail .mlab{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid-gray);margin-top:5px;}
+
+/* Section heads */
+h2.sec{font-family:"Fraunces",Georgia,serif;font-size:40px;font-weight:400;margin:96px 0 8px;}
+.sec-note{color:var(--ink-soft);max-width:720px;margin-bottom:34px;}
+
+/* Threads */
+.threads{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink);}
+.thread{padding:22px 22px 26px;border-right:1px solid var(--light-gray);}
+.thread:last-child{border-right:0;}
+.thread h3{font-family:"Inter Tight";font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;}
+.ledger-row{display:flex;gap:10px;padding:8px 0;border-bottom:1px dotted var(--light-gray);font-size:14.5px;}
+.ledger-row .d{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--mid-gray);white-space:nowrap;padding-top:3px;}
+.thread p{font-size:14.5px;color:var(--ink-soft);margin-top:12px;}
+
+/* Cards */
+.dossier{margin-top:18px;}
+.card{background:var(--ivory-warm);border-radius:8px;padding:30px 32px;margin-bottom:26px;}
+.card .metarow{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-bottom:14px;}
+.card .pill{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);}
+.card h3{font-family:"Inter Tight";font-size:22px;font-weight:600;line-height:1.3;margin-bottom:14px;}
+.card p{font-size:16px;margin-bottom:9px;}
+.card p b{font-weight:600;}
+.src{font-family:"JetBrains Mono",monospace;font-size:14px;margin-top:14px;}
+.anchor{display:inline-block;width:42px;height:42px;}
+
+/* Dark lead card */
+.card.dark{background:var(--ink);color:var(--ivory);}
+.card.dark .lead-claim{font-family:"Fraunces",Georgia,serif;font-size:40px;line-height:1.26;font-weight:400;margin-bottom:20px;}
+.card.dark .pill,.card.dark p{color:var(--ivory-deep);}
+.card.dark p b{color:var(--ivory);}
+.card.dark a{color:var(--ivory);}
+.card.dark a:hover{color:var(--terracotta);}
+.card.dark .u-terra{text-decoration-color:var(--terracotta);}
+
+/* Two-col body */
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.twocol .lab{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mid-gray);margin-bottom:5px;}
+
+/* Financing supplement */
+.finsupp{background:var(--ivory-deep);border-radius:8px;padding:26px 30px;margin-top:8px;}
+.finsupp p{font-size:17px;}
+
+/* Action memo */
+.memo{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink);margin-top:18px;}
+.memo .col{padding:22px 22px 8px;border-right:1px solid var(--light-gray);}
+.memo .col:last-child{border-right:0;}
+.memo h3{font-family:"Fraunces",Georgia,serif;font-size:21px;margin-bottom:14px;}
+.memo .item{padding:12px 0;border-bottom:1px solid var(--light-gray);font-size:14.5px;color:var(--ink-soft);}
+.memo .item:last-child{border-bottom:0;}
+
+/* Colophon */
+.colophon{margin-top:80px;border-top:1px solid var(--ink);padding-top:18px;}
+
+@media(max-width:720px){
+  .shell{padding:48px 20px;}
+  .hero,.threads,.memo,.twocol{grid-template-columns:1fr;}
+  .rail{border-left:0;border-top:1px solid var(--light-gray);padding-left:0;padding-top:18px;margin-top:8px;}
+  .thread,.memo .col{border-right:0;border-bottom:1px solid var(--light-gray);}
+  .hero-claim{font-size:27px;} h2.sec{font-size:32px;} .card.dark .lead-claim{font-size:30px;}
+}
+</style>
 </head>
-<body><main class="shell">
-  <div class="mast"><div>中美太空算力周报</div><div>2026-W21 · 2026.05.18–2026.05.24 · Compiled 2026.05.25<br>Pass A/B/C 补扫完成；境内/境外融资清单已导入</div></div>
-  <section class="hero"><div><h1>在轨 AI 进入<span class="u">工程盘点</span>期</h1><p class="lede">本周太空算力的主线，是从概念叙事转向可验证指标：卫星数量、单星 TOPS、星间链路、服务器出口合规和高功率卫星平台同时成为决策变量。</p><div class="proof"><h2>Proof object · ranked signal list</h2><p>1. 中国在轨 AI 卫星第三方盘点；2. NVIDIA Data Center 收入继续扩大；3. Starship/Vast/Rocket Lab 补强空间基础设施；4. 企查查融资显示芯片、光通信、MEMS、量子与 AI 基础设施仍是资本集中带。</p></div></div><aside class="metrics"><div class="metric"><b>145</b><span>事件表</span></div><div class="metric"><b>54</b><span>正文条目</span></div><div class="metric"><b>15/54</b><span>融资占比</span></div><div class="metric"><b>15</b><span>S/A 事件</span></div></aside></section>
-  <section><h2>三条<span class="u">主线</span></h2><div class="threads"><div class="thread"><div class="label">Policy ledger</div><p>出口管制从芯片延伸到服务器整机和转运文件；中国侧 AI 立法、能算协同与空间站保障并行，政策焦点变成基础设施组合治理。</p></div><div class="thread"><div class="label">Milestone ladder</div><p>在轨 AI 星座、Starship V3、Vast 15kW 卫星总线和 Synspective SAR 补网共同说明，空间数据基础设施仍在快速堆叠。</p></div><div class="thread"><div class="label">Capital strip</div><p>融资补扫显示芯片/半导体、商业航天、AI 算力基础设施仍是资金主线；正文控制融资占比，其余沉淀到数据库。</p></div></div></section>
-  <section><h2>Core event dossier</h2><div class="cards">
-        <article class="event-card lead">
-          <div class="event-meta">S · 科技 · China · 5/20</div>
-          <div class="anchor">太空算力</div>
-          <h3>China Orbital Compute Reality Check 梳理中国在轨 AI 卫星网络真实状态</h3>
-          <p><strong>判断</strong>：在轨计算从概念验证进入可盘点的工程对象，后续关键在星间链路、功耗与真实任务闭环。</p>
-          <p><strong>影响</strong>：Singapore Space Agency 5 月 20 日盘点中国在轨 AI 计算网络，提到国星宇航 22 颗 AI 卫星、三体计算星座 744 TOPS 单星与 5 POPS 网络能力等公开信号，同时提示星间组网仍需继续核验。</p>
-          <p><strong>对我们的意义</strong>：优先跟踪可验证的星上模型、计算指标、星间链路与客户任务。</p>
-          <p><strong>后续跟踪</strong>：下一条一手技术白皮书、在轨测试结果、星间链路演示或招股书更新。</p>
-          <a href="https://www.spacesgp.com/en/insights/china-orbital-compute-reality-check-2026" target="_blank" rel="noopener noreferrer">Source: Singapore Space Agency ↗</a>
-        </article>
-        <article class="event-card timeline">
-          <div class="event-meta">A · 科技 · China · 5/20</div>
-          <div class="anchor">太空算力</div>
-          <h3>第三方报告再次确认三体计算星座是中国在轨 AI 的核心样本</h3>
-          <p><strong>判断</strong>：在轨计算从概念验证进入可盘点的工程对象，后续关键在星间链路、功耗与真实任务闭环。</p>
-          <p><strong>影响</strong>：Singapore Space Agency 把浙江实验室/国星宇航三体计算星座列为中国最重要的在轨计算验证之一，提示后续应跟踪模型规模、星间链路和商业化任务。</p>
-          <p><strong>对我们的意义</strong>：优先跟踪可验证的星上模型、计算指标、星间链路与客户任务。</p>
-          <p><strong>后续跟踪</strong>：下一条一手技术白皮书、在轨测试结果、星间链路演示或招股书更新。</p>
-          <a href="https://www.spacesgp.com/en/insights/china-orbital-compute-reality-check-2026" target="_blank" rel="noopener noreferrer">Source: Singapore Space Agency ↗</a>
-        </article>
-        <article class="event-card evidence">
-          <div class="event-meta">A · 科技 · US · 5/19</div>
-          <div class="anchor">商业航天</div>
-          <h3>Vast 发布 15kW 级高功率卫星总线，明确面向 orbital data center constellations</h3>
-          <p><strong>判断</strong>：在轨计算从概念验证进入可盘点的工程对象，后续关键在星间链路、功耗与真实任务闭环。</p>
-          <p><strong>影响</strong>：Vast 5 月 19 日宣布推出高功率卫星产品线，首个产品为 15kW 级卫星总线，面向通信、对地观测、国家安全和 orbital data center satellite constellations。</p>
-          <p><strong>对我们的意义</strong>：优先跟踪可验证的星上模型、计算指标、星间链路与客户任务。</p>
-          <p><strong>后续跟踪</strong>：下一条一手技术白皮书、在轨测试结果、星间链路演示或招股书更新。</p>
-          <a href="https://www.vastspace.com/updates/vast-expands-into-high-power-satellite-buses-leveraging-in-house-space-station-technology-and-proven-haven-demo-satellite-heritage" target="_blank" rel="noopener noreferrer">Source: Vast ↗</a>
-        </article>
-        <article class="event-card risk">
-          <div class="event-meta">A · 科技 · US · 5/19</div>
-          <div class="anchor">太空算力</div>
-          <h3>Deep Tech to Space 论文定义 space data centers 为多租户 AI 服务平台</h3>
-          <p><strong>判断</strong>：在轨计算从概念验证进入可盘点的工程对象，后续关键在星间链路、功耗与真实任务闭环。</p>
-          <p><strong>影响</strong>：arXiv 5 月 19 日论文 Deep Tech to Space: Space Data Centers and AI Revolution at the Edge 将 SDC 描述为可在轨处理数据并向客户卫星和地面用户提供可执行洞察的平台。</p>
-          <p><strong>对我们的意义</strong>：优先跟踪可验证的星上模型、计算指标、星间链路与客户任务。</p>
-          <p><strong>后续跟踪</strong>：下一条一手技术白皮书、在轨测试结果、星间链路演示或招股书更新。</p>
-          <a href="https://arxiv.org/abs/2605.19892" target="_blank" rel="noopener noreferrer">Source: arXiv ↗</a>
-        </article>
-        <article class="event-card source">
-          <div class="event-meta">A · 科技 · US · 5/22</div>
-          <div class="anchor">商业航天</div>
-          <h3>SpaceX Starship V3 完成首次升级版飞行测试</h3>
-          <p><strong>判断</strong>：卫星、发射和空间站链路继续扩容，为空间数据处理和边缘计算提供载体。</p>
-          <p><strong>影响</strong>：AP 报道 SpaceX 发射最大、最强版本 Starship V3。重型可复用运力是大规模星座、月面基础设施和空间数据中心设想的运输前提。</p>
-          <p><strong>对我们的意义</strong>：跟踪发射节奏、卫星平台功率、遥感数据密度和空间站载荷机会。</p>
-          <p><strong>后续跟踪</strong>：发射结果、任务载荷、客户合同、监管授权和后续星座补网。</p>
-          <a href="https://apnews.com/article/53eb1c43f870561788839b08c401bf8f" target="_blank" rel="noopener noreferrer">Source: Associated Press ↗</a>
-        </article>
-        <article class="event-card timeline">
-          <div class="event-meta">A · 科技 · Global · 5/21</div>
-          <div class="anchor">太空算力</div>
-          <h3>空间数据中心通信瓶颈论文给出多层异构 SDC 架构</h3>
-          <p><strong>判断</strong>：在轨计算从概念验证进入可盘点的工程对象，后续关键在星间链路、功耗与真实任务闭环。</p>
-          <p><strong>影响</strong>：arXiv 论文 Toward Communication-Efficient Space Data Centers 讨论 relay satellites 与 orbital computing nodes 组成的多层异构 SDC 架构，强调通信瓶颈、能耗和热约束。</p>
-          <p><strong>对我们的意义</strong>：优先跟踪可验证的星上模型、计算指标、星间链路与客户任务。</p>
-          <p><strong>后续跟踪</strong>：下一条一手技术白皮书、在轨测试结果、星间链路演示或招股书更新。</p>
-          <a href="https://arxiv.org/abs/2605.12681" target="_blank" rel="noopener noreferrer">Source: arXiv ↗</a>
-        </article>
-        <article class="event-card evidence">
-          <div class="event-meta">A · 科技 · US · 5/20</div>
-          <div class="anchor">AI算力</div>
-          <h3>NVIDIA FY2027 Q1 收入 816 亿美元，Data Center 仍是 AI 基础设施核心</h3>
-          <p><strong>判断</strong>：高端芯片与量子/经典混合计算继续决定 AI 与空间数据处理的上限。</p>
-          <p><strong>影响</strong>：NVIDIA 5 月 20 日发布 FY2027 Q1 业绩，收入 816 亿美元，同比增 85%。AI 数据中心需求继续支撑全球芯片、服务器和高速互连资本开支。</p>
-          <p><strong>对我们的意义</strong>：关注高可靠芯片、光通信、传感器、RISC-V 与出口管制对供应链的影响。</p>
-          <p><strong>后续跟踪</strong>：量产节点、客户验证、出口管制执行、融资后产能与订单。</p>
-          <a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-First-Quarter-Fiscal-2027/default.aspx" target="_blank" rel="noopener noreferrer">Source: NVIDIA IR ↗</a>
-        </article>
-        <article class="event-card risk">
-          <div class="event-meta">A · 科技 · US/Japan · 5/22</div>
-          <div class="anchor">商业航天</div>
-          <h3>Rocket Lab 完成第 9 次 Synspective StriX SAR 专属发射</h3>
-          <p><strong>判断</strong>：卫星、发射和空间站链路继续扩容，为空间数据处理和边缘计算提供载体。</p>
-          <p><strong>影响</strong>：Rocket Lab 官方公告称 5 月 22 日成功部署 Synspective 最新 SAR 卫星，这是其为该日本对地观测星座完成的第 9 次专属任务。SAR 星座补网提高全天时数据密度。</p>
-          <p><strong>对我们的意义</strong>：跟踪发射节奏、卫星平台功率、遥感数据密度和空间站载荷机会。</p>
-          <p><strong>后续跟踪</strong>：发射结果、任务载荷、客户合同、监管授权和后续星座补网。</p>
-          <a href="https://investors.rocketlabcorp.com/news-releases/news-release-details/mission-success-rocket-lab-completes-9th-electron-launch" target="_blank" rel="noopener noreferrer">Source: Rocket Lab IR ↗</a>
-        </article></div></section>
-  <section class="supplement"><h2>融资其余条目</h2><p>本周境内/境外融资清单另含芯片/半导体 22 条、商业航天 14 条、AI 算力 70 条。单笔金额从未披露到亿元级/千万美元级不等，详见数据库版 5C.1/5C.2/5C.3。</p></section>
-  <section><h2>Action memo</h2><div class="memo"><div class="memo-col"><h3>机会</h3><div>优先跟踪在轨 AI 星座的一手技术披露，尤其星间链路、模型规模和真实任务闭环。</div><div>Vast 高功率卫星总线把 orbital data center 从论文推向平台供应链。</div></div><div class="memo-col"><h3>风险</h3><div>AI 服务器转运执法会影响高端算力采购路径，需关注整机、云和最终用户审查。</div><div>空间数据中心仍受功耗、散热、通信瓶颈和发射成本约束，避免过早商业化乐观。</div></div><div class="memo-col"><h3>下周必须看</h3><div>Shenzhou-23、Starship V3 后续任务结果与 NASA/SpaceX 任务页面更新。</div><div>企查查筛出的航天芯片、光通信、MEMS 项目是否出现公开官网或订单证据。</div></div></div></section>
-  <footer>中美太空算力周报 · 2026-W21 · Compiled 2026.05.25 · Internal use</footer>
-</main></body></html>
+<body>
+<div class="shell">
+
+  <!-- Masthead -->
+  <header class="masthead">
+    <h1>中美太空算力周报</h1>
+    <div class="meta">
+      <div class="mono">2026-W22 · 2026.05.25–05.31</div>
+      <div class="mono">Compiled 2026.06.01</div>
+    </div>
+  </header>
+  <div class="scanline mono">Pass A 34 查询 / Pass B 86 栏目全量 / Pass C 验证 + 用户补充中国政策线索（已核验）</div>
+
+  <!-- Executive hero -->
+  <section class="hero">
+    <div>
+      <div class="hero-claim">本周中美在<span class="u-terra">太空算力主航道</span>首次同周落子：中国国家队组建攻关体、共建研究院，美国太空军砸下 64 亿美元天基合同。</div>
+      <p class="hero-sub">资本—运力—算力三线同时加速，政策路径出现清晰分化：中国走"组织化 + 标准化"，美国走"采购化 + 资本化"。本周为资本密集、美国政策/科技偏静的结构性周。</p>
+    </div>
+    <div class="rail">
+      <div class="m"><div class="mnum">93</div><div class="mlab">事件表（入池）</div></div>
+      <div class="m"><div class="mnum">54</div><div class="mlab">正文条数</div></div>
+      <div class="m"><div class="mnum">3 · 4</div><div class="mlab">S 级 · A 级</div></div>
+      <div class="m"><div class="mnum">15·13·60</div><div class="mlab">政策·科技·融资</div></div>
+      <div class="m"><div class="mnum">48%</div><div class="mlab">融资占正文比</div></div>
+    </div>
+  </section>
+
+  <!-- Three threads -->
+  <h2 class="sec">三条<span class="u-terra">主线</span></h2>
+  <div class="sec-note">政策、科技、融资三线本周判断（不同信息形态：政策＝监管台账 / 科技＝里程碑阶梯 / 融资＝资本条）。</div>
+  <div class="threads">
+    <div class="thread">
+      <h3>政策 · 监管台账</h3>
+      <div class="ledger-row"><span class="d">5/29</span><span>太空数智攻关体（天津·国家超算牵头）</span></div>
+      <div class="ledger-row"><span class="d">5/30</span><span>北京太空智算研究院（亦庄·2028 试验星）</span></div>
+      <div class="ledger-row"><span class="d">5/26</span><span>国产 AI 芯片国标安全认证（8 款 I 级）</span></div>
+      <div class="ledger-row"><span class="d">5/27</span><span>美·太空军 SDN+SB-AMTI 64 亿美元</span></div>
+      <p>中国自上而下组织化/标准化落子太空算力；美国以采购形式集中天基能力到 SpaceX。美国新发政策约 6 条，偏静周。</p>
+    </div>
+    <div class="thread">
+      <h3>科技 · 里程碑阶梯</h3>
+      <div class="ledger-row"><span class="d">5/29</span><span>Blue Origin New Glenn 静态点火爆炸，停飞</span></div>
+      <div class="ledger-row"><span class="d">5/28</span><span>Observable Space 激光直击在轨数据中心下行</span></div>
+      <div class="ledger-row"><span class="d">5/27</span><span>通信技术试验卫星二十四号发射</span></div>
+      <div class="ledger-row"><span class="d">5/25</span><span>神舟二十三号进驻 / 华为"韬定律"</span></div>
+      <p>运力/平台节奏主导；星载算力内核两条强信号（Observable 激光下行、Ubotica×NOVI 星载 AI）最值得跟踪。</p>
+    </div>
+    <div class="thread">
+      <h3>融资 · 资本条</h3>
+      <div class="ledger-row"><span class="d">5/28</span><span>Anthropic $65B H 轮 · 估值 $965B</span></div>
+      <div class="ledger-row"><span class="d">5/28</span><span>墨芯 C 轮近 10 亿元（稀疏 AI 推理芯片）</span></div>
+      <div class="ledger-row"><span class="d">5/30</span><span>穿越者亿元（商业载人航天 C 端最大单笔）</span></div>
+      <div class="ledger-row"><span class="d">5/29</span><span>Sidus Space 约 $100M 发行</span></div>
+      <p>资金面最密集板块：芯片/半导体最多、商业航天次之、AI 算力多条。境外大额由 Anthropic 领衔。</p>
+    </div>
+  </div>
+
+  <!-- Core event dossier -->
+  <h2 class="sec">核心<span class="u-terra">事件</span></h2>
+  <div class="sec-note">本周 6 条最关键 S/A 事件。每张卡片底部为可点击原文链接。</div>
+  <div class="dossier">
+
+    <!-- Dark lead card -->
+    <div class="card dark">
+      <div class="metarow">
+        <span class="pill">S · 政策/太空算力 · 中国 · 5/29</span>
+      </div>
+      <div class="lead-claim">国家超算天津中心牵头，8 家机构组建"<span class="u-terra">太空数智基础设施联合攻关体</span>"——中国把"超算上天"推进到工程化攻关。</div>
+      <p><b>判断　</b>这是中国侧本周最强政策/产业信号，太空算力主航道内核：国家队牵头、明确锁定星上超算载荷、在轨智能处理、星地协同调度、太空系统自治运维四大方向。</p>
+      <p><b>影响　</b>把概念叙事升级为有牵头机构、有产业链（航天神舟科技/飞腾/曙光/中电科蓝天）的攻关组织；供电目标从 25kW 指向百 kW–兆瓦级，算力从 1P 指向 100P+。</p>
+      <p><b>对我们　</b>太空算力主航道出现"国家队入场"信号，应据此重判赛道时间表与卡位窗口，盯紧供电/散热/抗辐照算力等关键瓶颈环节的国产配套机会。</p>
+      <p><b>跟踪　</b>攻关体首个产品化节点、百 kW 级供电与 100P 级算力突破、是否落地试验星。</p>
+      <div class="src"><a href="https://www.stdaily.com/web/gdxw/2026-05/30/content_525003.html" target="_blank" rel="noopener noreferrer">Source: 科技日报 ↗</a></div>
+    </div>
+
+    <!-- Card 2: 北京太空智算研究院 -->
+    <div class="card">
+      <div class="metarow"><span class="pill">S · 政策/太空算力 · 中国 · 5/30</span></div>
+      <h3>"北京太空智算研究院"在亦庄成立，计划 2028 年前完成首发试验星</h3>
+      <div class="twocol">
+        <div>
+          <div class="lab">判断 / 影响</div>
+          <p>太空算力主航道内核。国家信创园联合京东方、银河航天、蓝箭航天、星河动力、观宇芯算、长鑫集电及中国信通院共建，把星座、运载、芯片玩家拢入同一研发实体，聚焦星载算力芯片、星间激光通信、太空能源散热与天地一体化网络。</p>
+        </div>
+        <div>
+          <div class="lab">对我们 / 跟踪</div>
+          <p>2028 试验星时间表给出明确节点，应跟踪其研制进度与"天地一体化智算网"架构；银河航天/蓝箭/星河动力的配套动作是赛道卡位的先行指标。</p>
+        </div>
+      </div>
+      <div class="src"><a href="https://finance.china.com.cn/news/20260530/6309959.shtml" target="_blank" rel="noopener noreferrer">Source: 中国网财经 ↗</a></div>
+    </div>
+
+    <!-- Card 3: 太空军双合同 (capital/regulatory strip) -->
+    <div class="card">
+      <div class="metarow"><span class="pill">S/A · 政策/商业航天 · 美国 · 5/27–5/29</span></div>
+      <h3>美国太空军同周授予 SpaceX 两笔巨额天基合同，合计 64 亿美元</h3>
+      <p><b>SDN Backbone　</b>22.9 亿美元 OTA（5/27）：建低轨高吞吐低时延数据回传骨干（前身 MILNET），与 SDA 传输层协同构成 SDN 混合网状网，2027 年底交付可运行原型。</p>
+      <p><b>SB-AMTI　</b>41.6 亿美元（5/29）：天基动目标指示感知层星座，预计 2028 组网。</p>
+      <p><b>判断 / 影响　</b>美国以采购形式把低轨数据骨干与天基感知进一步集中到 SpaceX——低轨数据骨干是星上算力价值释放的核心通道，SB-AMTI 的在轨目标识别正是星载 AI 推理典型场景。</p>
+      <p><b>对我们 / 跟踪　</b>盯紧 SDN/SB-AMTI 是否引入星上处理/边缘计算需求，这是太空算力上车的潜在采购入口；关注 SpaceX 国安采购集中度上升的连锁影响。</p>
+      <div class="src"><a href="https://spacenews.com/space-force-awards-spacex-4-16-billion-to-build-satellite-network-for-airborne-target-tracking/" target="_blank" rel="noopener noreferrer">Source: SpaceNews ↗</a></div>
+    </div>
+
+    <!-- Card 4: Observable Space (evidence stack) -->
+    <div class="card">
+      <div class="metarow"><span class="pill">A · 科技/太空算力 · 美国 · 5/28</span></div>
+      <h3>Observable Space 获 9000 万美元 A 轮并赢得太空军光学合同，激光直击"在轨数据中心"下行瓶颈</h3>
+      <p><b>判断　</b>本周与太空算力主航道最贴近的公开事件之一：用激光帮助卫星及在轨数据中心与地面收发信息，正面切入在轨算力的数据下行瓶颈。</p>
+      <p><b>影响　</b>融资（Lux Capital 领投）+ 太空军合同双背书，验证"星上算力的价值必须靠高速下行兑现"这一判断。</p>
+      <p><b>对我们 / 跟踪　</b>跟踪其激光终端与 SpaceX/在轨数据中心客户绑定，及在轨数据中心激光下行 demo 时间表。</p>
+      <div class="src"><a href="https://spacenews.com/observable-space-raises-90-million-and-wins-space-force-contract-for-optical-systems/" target="_blank" rel="noopener noreferrer">Source: SpaceNews ↗</a></div>
+    </div>
+
+    <!-- Card 5: 芯片国标认证 -->
+    <div class="card">
+      <div class="metarow"><span class="pill">A · 政策/芯片 · 中国 · 5/26</span></div>
+      <h3>国产 AI 芯片首获国标级安全认证：8 款 I 级，寒武纪、燧原未上榜</h3>
+      <p><b>判断 / 影响　</b>中国信息安全测评中心与国家保密科技测评中心发布《安全可靠测评结果公告（2026 第 2 号）》，海思昇腾 310/910、平头哥真武、壁仞壁砺 166、海光 DCU-3G、天数、沐曦 MXC600、摩尔线程 PH100 获 I 级（有效期三年）。为国产算力芯片进入党政/关键基础设施（含潜在宇航级路径）采购扫清合规门槛。</p>
+      <p><b>对我们 / 跟踪　</b>跟踪后续批次认证厂商与航天/宇航级芯片是否纳入；认证结果在政府采购的兑现节奏。</p>
+      <div class="src"><a href="https://www.itsec.gov.cn/aqkkcp/cpgg/202605/t20260526_259396.html" target="_blank" rel="noopener noreferrer">Source: 中国信息安全测评中心 ↗</a></div>
+    </div>
+
+    <!-- Card 6: Anthropic (capital strip, financing) -->
+    <div class="card">
+      <div class="metarow"><span class="pill">融资 · AI算力 · 美国 · 5/28 · 金额兜底</span></div>
+      <h3>Anthropic 完成 650 亿美元 H 轮，投后估值 9650 亿美元</h3>
+      <p><b>判断 / 影响　</b>史上最大私募轮之一（Altimeter/Dragoneer/Greenoaks/Sequoia 领投，含 Amazon 50 亿），超越 OpenAI 成全球最具价值 AI 初创。牵引地面 AI 算力/数据中心扩张，是太空算力的对照参照系——地面算力的电力/散热约束越紧，"算力上天"叙事越被强化。</p>
+      <p><b>对我们 / 跟踪　</b>跟踪 Anthropic 资金的算力采购去向（Amazon Trainium/数据中心），作为太空算力差分定位的成本基线。</p>
+      <div class="src"><a href="https://www.anthropic.com/news/series-h" target="_blank" rel="noopener noreferrer">Source: Anthropic ↗</a></div>
+    </div>
+
+  </div>
+
+  <!-- Financing supplement -->
+  <h2 class="sec">融资<span class="u-terra">其余条目</span></h2>
+  <div class="finsupp">
+    <p>除上方 Anthropic 外，本周融资清单另含：芯片/半导体约 14 条（墨芯近 10 亿、先导激光 9 亿、丰科晶晟 4.92 亿、青禾晶元约 5 亿、九天睿芯/奇点光子/镓未来等，单笔区间数千万元–10 亿元），商业航天/卫星约 8 条（穿越者亿元、中星高科超亿元、Sidus 约 $100M、Momentus $25M、Orbital Industries $50M），相关 AI 算力多条（中科紫东太初、华翊量子、OpenRouter $113M、XCENA $135M、Cognition $1B）。详见数据库版 5C.1 / 5C.2 / 5C.3。</p>
+  </div>
+
+  <!-- Action memo -->
+  <h2 class="sec">行动<span class="u-terra">备忘</span></h2>
+  <div class="memo">
+    <div class="col">
+      <h3>机会</h3>
+      <div class="item">太空算力国家队入场（攻关体+研究院）——卡位供电/散热/抗辐照算力国产配套，盯试验星供应链窗口。</div>
+      <div class="item">太空军 SDN/SB-AMTI 是星上处理/边缘计算的潜在采购入口，提前对标载荷算力能力。</div>
+      <div class="item">国产 AI 芯片国标认证为宇航级芯片合规路径打样，关注后续批次纳入航天器件。</div>
+    </div>
+    <div class="col">
+      <h3>风险</h3>
+      <div class="item">Blue Origin New Glenn 爆炸停飞，拖累 Amazon Leo 24 次发射清单与 Artemis，大质量在轨平台上行运力承压。</div>
+      <div class="item">SpaceX 国安采购集中度持续上升（同周 64 亿美元），低轨数据层单一供应商风险加大。</div>
+      <div class="item">本周融资占比 48%、美国政策/科技偏静——赛道资本热但政策/技术里程碑供给不足，警惕估值与基本面背离。</div>
+    </div>
+    <div class="col">
+      <h3>下周必须看</h3>
+      <div class="item">智神星一号（5/30 计划首飞+回收）、长十乙（5/31 计划首飞）实际结果确认。</div>
+      <div class="item">New Glenn 事故调查结论与 LC-36 重建时间；Starship 调查与复飞。</div>
+      <div class="item">太空数智攻关体/北京太空智算院首个产品化或试验星节点；芯片国标认证后续批次。</div>
+    </div>
+  </div>
+
+  <!-- Colophon -->
+  <div class="colophon mono">中美太空算力周报 · 2026-W22 · Compiled 2026.06.01 · Internal use</div>
+
+</div>
+</body>
+</html>
